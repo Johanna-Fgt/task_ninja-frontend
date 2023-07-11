@@ -1,7 +1,7 @@
 import Home from '../components/Home';
 
-function Index() {
-  return <Home />;
-}
+const Index = () => {
+	return <Home />;
+};
 
 export default Index;
