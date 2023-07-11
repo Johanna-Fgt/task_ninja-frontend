@@ -1,0 +1,224 @@
+/* POSITIONS */
+@mixin flex($direction, $gap: 0) {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: $direction;
+	gap: $gap;
+	@if ($direction == 'row') {
+		justify-content: center;
+	}
+}
+@mixin absolute($top: 0, $left: 0) {
+	position: absolute;
+	top: $top;
+	left: $left;
+}
+
+/* STYLING EFFECTS */
+@mixin filter($color) {
+	filter: drop-shadow(1px 2px 3px $color) drop-shadow(2px 4px 6px $color)
+		drop-shadow(4px 8px 12px $color);
+}
+@mixin bright($color) {
+	filter: brightness(1.5) drop-shadow(0px 0px 4px $color);
+}
+@mixin sideBorder($color, $paddingTop: 35px) {
+	padding-top: $paddingTop;
+	padding-left: 5px;
+	align-self: flex-end;
+	font-style: italic;
+	border-left: 1px $color solid;
+}
+@mixin quote($color) {
+	quotes: '“' '”';
+	&:before,
+	&:after {
+		padding: 0 5px;
+		color: $color;
+		display: inline-block;
+	}
+}
+@mixin quoteDarkMode($color) {
+	&:before,
+	&:after {
+		transform: rotate(13deg);
+		@include filter($color);
+		@include dancing(3s);
+	}
+}
+@mixin input($color) {
+	width: 100%;
+	height: 4.6rem;
+	padding-left: 12px;
+	border: none;
+	background: none;
+	color: var(--greyDark);
+	caret-color: $color;
+	border-radius: var(--border-radius);
+	box-shadow: var(--inner-shadow);
+	&:focus {
+		outline: none;
+		box-shadow: var(--shadow);
+	}
+}
+@mixin inputDarkMode($color) {
+	outline: none;
+	color: var(--white);
+	caret-color: $color;
+	background-color: var(--bg-modal);
+	box-shadow: inset 0 0 0 1px $color;
+	&:focus,
+	&:active {
+		box-shadow: inset 0 0 0 2.5px $color;
+	}
+}
+@mixin radioInput($color) {
+	all: unset;
+	position: relative;
+	@include flex(row);
+	cursor: pointer;
+	border-radius: 50%;
+	width: var(--radio-btn);
+	height: var(--radio-btn);
+	box-shadow: var(--shadow);
+	&:after {
+		content: '';
+		position: absolute;
+		width: calc(var(--radio-btn) / 2);
+		height: calc(var(--radio-btn) / 2);
+		background: var(--greyDark);
+		border-radius: 50%;
+		transition: 0.3s ease;
+	}
+	&:hover,
+	&:focus,
+	&:checked {
+		&:after {
+			background: var(--color);
+		}
+	}
+	&:checked {
+		box-shadow: var(--inner-shadow);
+	}
+}
+
+/* BACKGROUNDS */
+@mixin background-image($color, $src, $cover: cover) {
+	background-color: $color;
+	background-image: $src;
+	background-size: $cover;
+	background-repeat: no-repeat;
+}
+@mixin background-text($color) {
+	background-color: var(--white);
+	background-image: linear-gradient(to right, $color 0%, var(--white) 85%);
+	background-size: 100%;
+	background-repeat: repeat;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
+
+/* ANIMATIONS */
+@mixin dancing($duration) {
+	animation: dancing $duration linear infinite;
+	@keyframes dancing {
+		0% {
+			transform: rotate(13deg) scale(2);
+		}
+		25% {
+			transform: rotate(0deg);
+		}
+		50% {
+			transform: rotate(-13deg) scale(2);
+		}
+		75% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(13deg) scale(2);
+		}
+	}
+}
+@mixin filling($dasharray, $percent) {
+	animation: filling 1500ms linear forwards;
+	@keyframes filling {
+		100% {
+			stroke-dashoffset: calc($dasharray - $dasharray * $percent);
+		}
+	}
+}
+@mixin loading($color) {
+	@keyframes load7 {
+		0%,
+		80%,
+		100% {
+			box-shadow: 0 25px 0 -13px var(--white);
+		}
+		40% {
+			box-shadow: 0 25px 0 0 $color;
+		}
+	}
+}
+@mixin appearing($duration) {
+	animation: appear $duration cubic-bezier(0.23, 1, 0.32, 1);
+	@keyframes appear {
+		from {
+			opacity: 0;
+			transform: scale(0);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
+@mixin infiniteTxt($duration) {
+	animation-play-state: running;
+	animation: infiniteText $duration linear infinite;
+	&:hover {
+		animation-play-state: paused;
+	}
+	@keyframes infiniteText {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-45%);
+		}
+	}
+}
+@mixin waves($delay: 0s) {
+	animation: waves 4s linear $delay infinite;
+	@keyframes waves {
+		0% {
+			transform: scale(1);
+			opacity: 1;
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			transform: scale(2);
+			opacity: 0;
+		}
+	}
+}
+
+/* SCROLLBAR - Chrome */
+@mixin scrollX {
+	overflow-x: scroll;
+	&::-webkit-scrollbar {
+		height: 5px;
+	}
+	&::-webkit-scrollbar-corner {
+		background: var(--bg-color);
+	}
+	&::-webkit-scrollbar-thumb {
+		background: var(--color);
+		border-radius: var(--border-radius);
+	}
+}

@@ -1,0 +1,61 @@
+@use '../styles/mixins' as mxn;
+
+.container {
+	height: 100vh;
+	padding: var(--padding-Xlarge) 0;
+	@include mxn.flex(column);
+	justify-content: center;
+
+	.logo-container,
+	.btn-container {
+		@include mxn.flex(column, var(--Xlarge-gap));
+		justify-content: center;
+	}
+	.logo-container {
+		.title {
+			font-size: var(--font-size-title);
+			font-family: var(--font-family-logo);
+			span {
+				color: var(--text-color-light);
+			}
+		}
+	}
+	.btn-container {
+		.btn {
+			@include mxn.flex(row);
+			width: 200px;
+			height: var(--i-btn-Xlarge-size);
+			border: none;
+			cursor: pointer;
+			text-transform: uppercase;
+			transition: var(--transition);
+			&:not(:last-child) {
+				border-radius: var(--border-round);
+			}
+			&:first-child,
+			&:nth-child(2):hover {
+				background-color: var(--purple);
+			}
+			&:nth-child(2),
+			&:first-child:hover {
+				background-color: white;
+				box-shadow: 0 0 0 1px var(--purple);
+			}
+			&:last-child:hover {
+				border-radius: 10px;
+				width: 280px;
+				background-color: var(--purple);
+				box-shadow: 0 0 0 1px white;
+			}
+		}
+
+		&.signin .btn:not(:nth-child(2)),
+		&.signup .btn:not(:first-child) {
+			opacity: 0.7;
+			transform: scale(0.8);
+		}
+	}
+	.registerSection {
+		@include mxn.flex(column);
+	}
+}

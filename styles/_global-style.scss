@@ -1,0 +1,25 @@
+html {
+	font-size: 62.5%;
+}
+
+body {
+	color: var(--text-color-dark);
+	background-color: var(--bg-color);
+	font-family: var(--font-family-default);
+	font-size: var(--font-size-default-mobile);
+	@media all and (min-width: 768px) {
+		font-size: var(--font-size-default);
+	}
+}
+h1 {
+	font-size: var(--font-size-title-mobile);
+	@media all and (min-width: 768px) {
+		font-size: var(--font-size-title);
+	}
+}
+h2 {
+	font-size: var(--font-size-subtitle-mobile);
+	@media all and (min-width: 768px) {
+		font-size: var(--font-size-subtitle);
+	}
+}

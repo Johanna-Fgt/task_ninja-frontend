@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Roboto:wght@100;300;400;900&display=swap');
+
+:root {
+	--red: #f57a7d;
+	--green: #b2ded8;
+	--yellow: #e9e7b3;
+	--pink: #d6bbd6;
+	--purple: #b1bce5;
+	--text-color-light: #717171;
+	--text-color-dark: rgb(15, 15, 15);
+	--bg-color: #f5f5f5;
+
+	/* COLORS */
+	--primary-light: rgb(128, 203, 196);
+	--primary: rgb(0, 121, 107);
+	--primary-dark: rgb(0, 77, 64);
+	--white: rgb(255, 255, 255);
+	--greyLight-1: rgb(235, 239, 250);
+	--greyLight-2: rgb(200, 208, 231);
+	--greyLight-3: rgb(190, 200, 228);
+	--greyDark: rgb(155, 170, 207);
+	--text-primary: rgba(84, 95, 131, 0.91);
+	--color-success: var(--green);
+	// --bg-color: var(--greyLight-1);
+	--bg-color-header: rgb(229, 236, 255);
+
+	/* SHADOWS */
+	--shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+		-0.2rem -0.2rem 0.5rem var(--white);
+	--inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+		inset -0.2rem -0.2rem 0.5rem var(--white);
+
+	/* TEXT */
+	--font-family-default: 'Roboto', sans-serif;
+	--font-family-logo: 'Belanosima', sans-serif;
+	--font-size-default: 1.6rem;
+	--font-size-title: 3rem;
+	--font-size-subtitle: 2.5rem;
+	--font-size-default-mobile: 1.4rem;
+	--font-size-title-mobile: 2.2rem;
+	--font-size-subtitle-mobile: 1.8rem;
+	--font-size-caption: 1.2rem;
+	--letter-spacing: 1px;
+	--line-height: 1.7;
+
+	/* WIDTHS */
+	--max-width-element: 280px;
+	--max-card-width: 550px;
+	--max-width: 900px;
+
+	/* HEIGHTS */
+	--height-nav: 75px;
+
+	/* PADDINGS */
+	--padding-small: 10px;
+	--padding-medium: 20px;
+	--padding-large: 30px;
+	--padding-Xlarge: 40px;
+
+	/* SHAPES */
+	--border-radius: 10px;
+	--border-round: 40px;
+
+	/* BUTTONS */
+	--radio-btn: 28px;
+	--i-btn-small-size: 32px;
+	--i-btn-medium-size: 42px;
+	--i-btn-large-size: 60px;
+	--i-btn-Xlarge-size: 72px;
+	--medium-gap: 36px;
+	--large-gap: 24px;
+	--Xlarge-gap: 12px;
+
+	/* MODAL & FORM */
+	--bg-modal: rgba(0, 0, 0, 0.4);
+
+	/* ANIMATION */
+	--cubic-bezier: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	--transition: all 0.45s ease-in-out;
+}

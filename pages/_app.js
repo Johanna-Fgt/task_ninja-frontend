@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/index.scss';
 import Head from 'next/head';
 import Header from '../components/Header';
 import { GoogleOAuthProvider } from '@react-oauth/google';

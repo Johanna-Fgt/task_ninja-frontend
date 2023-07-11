@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { login, logout } from '../reducers/user';
 import styles from '../styles/Header.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faXmark } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 import Moment from 'react-moment';
 import { Modal } from 'antd';
-import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { login, logout } from '../reducers/user';
+import { useDispatch, useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
 	const dispatch = useDispatch();

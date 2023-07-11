@@ -1,6 +1,6 @@
-import styles from '../styles/Home.module.css';
-import Head from 'next/head';
+import Test from './Test';
 import Login from './Login';
+import Head from 'next/head';
 
 const Home = () => {
 	return (
@@ -15,6 +15,7 @@ const Home = () => {
 				/>
 			</Head>
 			<Login />
+			<Test />
 		</div>
 	);
 };

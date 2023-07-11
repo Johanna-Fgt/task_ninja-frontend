@@ -1,7 +1,4 @@
-@font-face {
-	font-family: "Old London";
-	src: url("/fonts/OldLondon.ttf");
-}
+
 
 .header {
 	border-bottom: 2px rgb(233, 190, 89) solid;
@@ -13,7 +10,7 @@
 
 .title {
 	font-size: 44px;
-	font-family: "Old London";
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	text-shadow: 1px 1px 0px #000;
 }
 
